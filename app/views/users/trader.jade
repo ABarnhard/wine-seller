@@ -8,13 +8,16 @@ block content
             thead
               tr
                 th#traderTh: a#traderName= trader.name
-                th.trader-photo(style='background-image:url(#{trader.photo});')
-            tbody
-              each prop in Object.keys(trader)
-                unless prop === '_id' || prop === 'password' || prop === 'photo' || prop === 'isPublic' || prop === 'tagline' || prop === 'name' || prop === 'unread'
-                  tr
-                    td= prop.charAt(0).toUpperCase() + prop.substring(1)
-                    td= trader[prop]
+                th: .profile-photo(style='background-image:url(#{trader.photo});')
+
+             tbody
+                tr
+              //-
+                each prop in Object.keys(trader)
+                  unless prop === '_id' || prop === 'password' || prop === 'photo' || prop === 'isPublic' || prop === 'tagline' || prop === 'name' || prop === 'unread'
+                    tr
+                      td= prop.charAt(0).toUpperCase() + prop.substring(1)
+                      td= trader[prop]
 
 
         .col-xs-12.col-md-9
