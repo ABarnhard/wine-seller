@@ -6,14 +6,10 @@ block content
       tr
         th Name
         th Photo
-        th Email
-        th Phone Number
     body
       each user in users
         tr
           td: a(href='/users/#{user.email}')=user.name
-          td: .userPhoto(style='background-image:url(#{user.photo})')
-          td= user.email
-          td= user.phone
+          td: .profile-photo(style='background-image:url(#{user.photo})')
 
 block scripts
